@@ -7,7 +7,7 @@ const Line = () => {
   const snap = useSnapshot(state)
   const thickness = 0.02
   const xMaterial = <meshStandardMaterial color={"#ffffff"} />
-  const { _, rotation, length } = { ...VictoryLineInfo[snap.victoryLineIndex] }
+  const { rotation, length } = { ...VictoryLineInfo[snap.victoryLineIndex] }
 
   return (
     <mesh castShadow rotation={rotation}>

@@ -1,5 +1,6 @@
 import { swatch } from "../assets"
 import state from "../store"
+import { EulerOrder } from "three/src/math/Euler.js"
 
 export interface TabElement {
   name: string
@@ -15,7 +16,7 @@ export const EditorTabs: TabElement[] = [
   },
 ]
 
-export const GridPositions: number[][] = [
+export const GridPositions: [x: number, y: number, z: number][] = [
   [-0.2, 0.2, 0],
   [0, 0.2, 0],
   [0.2, 0.2, 0],
@@ -38,15 +39,21 @@ export const WinConditions = [
   [2, 4, 6],
 ]
 
-export const VictoryLineInfo = [
-  { positon: [0, 0.2, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
-  { positon: [0, 0, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
-  { positon: [0, -0.2, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
-  { positon: [-0.2, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
-  { positon: [0, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
-  { positon: [0.2, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
-  { positon: [0, 0, 0.03], rotation: [0, 0, Math.PI / 4], length: 0.6 },
-  { positon: [0, 0, 0.03], rotation: [0, 0, -Math.PI / 4], length: 0.6 },
+interface VictoryLineInfoType {
+  position: [x: number, y: number, z: number]
+  rotation: [x: number, y: number, z: number, order?: EulerOrder | undefined]
+  length: number
+}
+
+export const VictoryLineInfo:VictoryLineInfoType[] = [
+  { position: [0, 0.2, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
+  { position: [0, 0, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
+  { position: [0, -0.2, 0.03], rotation: [0, 0, Math.PI / 2], length: 0.5 },
+  { position: [-0.2, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
+  { position: [0, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
+  { position: [0.2, 0, 0.03], rotation: [0, 0, 0], length: 0.5 },
+  { position: [0, 0, 0.03], rotation: [0, 0, Math.PI / 4], length: 0.6 },
+  { position: [0, 0, 0.03], rotation: [0, 0, -Math.PI / 4], length: 0.6 },
 ]
 
 export const DefaultBoard: Tile[][] = [

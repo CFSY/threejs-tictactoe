@@ -7,7 +7,7 @@ import O from "./O"
 import X from "./X"
 import { GridPositions, VictoryLineInfo } from "../config/constants"
 import { motion } from "framer-motion-3d"
-import { fadeAnimation, lineAnimation, tileAnimation } from "../config/motion"
+import { lineAnimation, tileAnimation } from "../config/motion"
 import { useState, useEffect } from "react"
 import Line from "./Line"
 
@@ -71,7 +71,7 @@ const Board = () => {
         <motion.mesh
           {...lineAnimation(
             !snap.intro,
-            VictoryLineInfo[snap.victoryLineIndex].positon
+            VictoryLineInfo[snap.victoryLineIndex].position
           )}>
           <Line />
         </motion.mesh>

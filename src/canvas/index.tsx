@@ -5,7 +5,6 @@ import Backdrop from "./Backdrop"
 import CameraRig from "./CameraRig"
 import { Vector3 } from "three"
 import ClickAreas from "./ClickAreas"
-import { AnimatePresence } from "framer-motion"
 
 const CanvasModel = () => {
   return (

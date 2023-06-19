@@ -3,10 +3,9 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useSnapshot } from "valtio"
 import state from "../store"
 import { EditorTabs, resetBoard } from "../config/constants"
-import { slideAnimation, headTextAnimation } from "../config/motion"
+import { slideAnimation } from "../config/motion"
 import { ColorPicker, Tab } from "../components"
 import { back, restart } from "../assets"
-import VictoryModal from "../components/Victory"
 
 const Customizer = () => {
   const snap = useSnapshot(state)
